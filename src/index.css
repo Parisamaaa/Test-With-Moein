@@ -1,0 +1,287 @@
+body{
+  background-color: #F7F3E3;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.center{
+  text-align: center;
+}
+/* Header */
+.header {
+  font-size: 36px;                   /* Large text for emphasis */
+  color: #333333;                    /* Dark color for readability */
+  text-align: center;                /* Center the text */
+  margin-top: 20px;                  /* Add space above the header */
+  margin-bottom: 30px;               /* Add space below the header */
+  letter-spacing: 2px;               /* Space out the letters slightly */
+  background-color: #F7F3E3;        /* Light background behind the header*/
+  padding: 20px;                     /* Add padding for spacing inside the header */
+  border-radius: 8px;                /* Slight rounding of the corners */
+  display: inline-block;  /* Only cover the text width */
+  transition:  transform 0.2s ease; 
+}
+
+.header:hover {
+ color: #445D48;
+ transform: scale(1.05); 
+}
+
+
+
+
+
+
+.items {
+  
+  background-color: #FDE5D4;
+  height: 50px;
+  width: 90%;
+  margin: 0px auto;
+  border-bottom: 1px solid #fafafa;
+  max-width: 60%;
+  text-align: left;
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-items: center;
+  padding: 1% 1% ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1%;
+}
+.items:hover {
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+}
+
+.items p{
+  font-weight: 900;
+  padding-left: 20px;
+  color: #445D48;
+}
+
+
+.items input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+
+.checkmark{
+  position: absolute;
+  /* top: 0; */
+  left: 1%;
+  height: 25px;
+  width: 25px;
+  background-color: #D6CC99;
+}
+/* On mouse-over, add a grey background color */
+.items:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.items input:checked ~ .checkmark {
+  background-color: #445D48;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.items input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.items .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.items input:checked{
+  display: block;
+}
+
+.items p {
+  margin-left: 20px;
+}
+
+
+
+
+/* delete button */
+
+.delete-btn {
+  opacity: 0;
+  position: absolute;
+  right: 1%;
+  background-color: #445D48; /* Red background */
+  color: #D6CC99;              /* White text */
+  border: none;              /* No border */
+  padding: 4px 4px;        /* Padding for the button */
+  font-size: 11px;           /* Font size */
+  border-radius: 5px;        /* Rounded corners */
+  cursor: pointer;           /* Cursor changes to pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.2s; /* Smooth transition for hover effects */
+}
+
+.items:hover .delete-btn,
+.items:hover .eddit-btn{
+  opacity: 1;
+  transition:  0.3s ease, transform 0.2s ease;
+}
+.delete-btn:hover,
+.eddit-btn:hover {
+  background-color: #8F5D44; /* Darker red on hover */
+  transform: scale(1.05);    /* Slightly enlarges on hover */
+}
+
+.delete-btn:active,
+.eddit-btn:active {
+  background-color: #445D50; /* Even darker red when clicked */
+  transform: scale(0.95);    /* Slightly shrinks when clicked */
+}
+
+/* eddite botton */
+.eddit-btn{
+
+  opacity: 0;
+  position: absolute;
+  right: 10%;
+  background-color: #445D48; /* Red background */
+  color: #D6CC99;              /* White text */
+  border: none;              /* No border */
+  padding: 4px 4px;        /* Padding for the button */
+  font-size: 11px;           /* Font size */
+  border-radius: 5px;        /* Rounded corners */
+  cursor: pointer;           /* Cursor changes to pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.2s; /* Smooth transition for hover effects */
+}
+
+
+
+
+.isDone{
+    text-decoration: line-through; /* Strikethrough text */
+    color: gray; /* Optional: Change text color for completed tasks */
+}
+
+
+
+
+.add-btn {
+  display: flex;
+  margin: 0px auto;
+  background-color: #F7F3E3;  /* Green background matching the design */
+  color: #F7F3E3;             /* Light text color */
+  border: none;
+  padding: 8px 16px;
+  font-size: 22px;
+  border-radius: 5px;
+  transition:  transform 0.2s ease;
+  margin-bottom: 50px;
+user-select: none;
+max-width: 60%;
+text-align: left;
+align-items: center;
+padding: 1% 1% ;
+overflow: hidden;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+transition: background-color 0.3s ease;
+margin-bottom: 3%;
+}
+
+.add-btn:hover {
+  /* transform: scale(1.01);     Slightly larger on hover */
+}
+
+
+.add-btn button{
+  background-color: #D6CC99;
+  border-radius: 15px;
+  height: 80px;
+  padding: 8px 16px;
+  font-size: 22px;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.4s ease, transform 0.2s ease;
+  color: #445D48;
+  
+}
+
+.add-btn button:hover{
+  background-color: #8F5D44;
+  color:#F7F3E3;
+  transform:  scale(1.02);
+}
+
+.add-btn button:active{
+  background-color: #D6CC99;
+  scale: 0.9;
+}
+
+.add-input {
+  background-color: #FDE5D4;
+  height: 50px;
+  width: 90%;
+  margin: 0px auto;
+  border-bottom: 1px solid #fafafa;
+  max-width: 60%;
+  text-align: left;
+  display: flex;
+  /* position: relative; */
+  font-size: 22px;
+  align-items: center;
+  padding: 1% 1% ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1%;
+  border-style: none;
+  transition: transform 0.9s ease,  background-color 0.2s ease;
+}
+
+.add-input:focus {
+  outline: none;                 /* Removes the default blue outline */
+        /* Darker border on focus */
+  box-shadow: 0 0 5px rgba(59, 79, 64, 0.4); /* Subtle shadow on focus */
+}
+
+.add-input:hover{
+  background-color: #fbe0cc;
+  transform: scale(1.02);
+}
+
